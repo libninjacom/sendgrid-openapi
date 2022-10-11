@@ -561,22 +561,6 @@ components:
             type: object
         type: object
       title: Sender ID Response Body
-    _metadata:
-      properties:
-        count:
-          minimum: 0
-          type: integer
-        next:
-          format: uri
-          type: string
-        prev:
-          format: uri
-          type: string
-        self:
-          format: uri
-          type: string
-      title: _metadata
-      type: object
     abbv-message:
       example:
         clicks_count: 2
@@ -726,7 +710,7 @@ components:
     all_segments_response:
       properties:
         _metadata:
-          $ref: '#/components/schemas/_metadata'
+          $ref: '#/components/schemas/metadata'
         contacts_count:
           description: Total number of contacts present in the segment
           type: integer
@@ -11194,7 +11178,7 @@ paths:
               examples:
                 response:
                   value:
-                    _metadata:
+                    _data:
                       count: 3
                       self: https://api.sendgrid.com/v3/designs?page_token=vHdvHCg0w1F-TmWJcPNpTEnFY2aPEmRBHONwOgZ6TgJbX2_I
                     result:
@@ -11232,7 +11216,7 @@ paths:
               schema:
                 properties:
                   _metadata:
-                    $ref: '#/components/schemas/_metadata'
+                    $ref: '#/components/schemas/metadata'
                   result:
                     items:
                       $ref: '#/components/schemas/design-output-summary'
@@ -11551,7 +11535,7 @@ paths:
               schema:
                 properties:
                   _metadata:
-                    $ref: '#/components/schemas/_metadata'
+                    $ref: '#/components/schemas/metadata'
                   result:
                     items:
                       $ref: '#/components/schemas/design-output-summary'
@@ -17280,7 +17264,7 @@ paths:
                 minProperties: 0
                 properties:
                   _metadata:
-                    $ref: '#/components/schemas/_metadata'
+                    $ref: '#/components/schemas/metadata'
                   custom_fields:
                     items:
                       $ref: '#/components/schemas/custom_field_definitions_response'
@@ -17346,7 +17330,7 @@ paths:
                 - $ref: '#/components/schemas/custom_field_definitions_response'
                 - properties:
                     _metadata:
-                      $ref: '#/components/schemas/_metadata'
+                      $ref: '#/components/schemas/metadata'
                   type: object
           description: ''
         '400':
@@ -17440,7 +17424,7 @@ paths:
                 - $ref: '#/components/schemas/custom_field_definitions_response'
                 - properties:
                     _metadata:
-                      $ref: '#/components/schemas/_metadata'
+                      $ref: '#/components/schemas/metadata'
                   type: object
           description: ''
         '400':
@@ -18788,7 +18772,7 @@ paths:
               schema:
                 properties:
                   _metadata:
-                    $ref: '#/components/schemas/_metadata'
+                    $ref: '#/components/schemas/metadata'
                   result:
                     items:
                       $ref: '#/components/schemas/singlesend_response_short'
@@ -19010,7 +18994,7 @@ paths:
               schema:
                 properties:
                   _metadata:
-                    $ref: '#/components/schemas/_metadata'
+                    $ref: '#/components/schemas/metadata'
                   result:
                     items:
                       $ref: '#/components/schemas/singlesend_response_short'
@@ -24940,7 +24924,7 @@ paths:
               schema:
                 properties:
                   _metadata:
-                    $ref: '#/components/schemas/_metadata'
+                    $ref: '#/components/schemas/metadata'
                   result:
                     description: ''
                     items:
@@ -29601,3 +29585,4 @@ tags:
 - name: Stats
 - name: Alerts
 - name: IP Pools
+
